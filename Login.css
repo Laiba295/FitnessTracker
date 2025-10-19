@@ -1,0 +1,240 @@
+/* --- Global Styles & Page Background --- */
+.login-page {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(83, 37, 80, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Modal Overlay --- */
+.login-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* --- Close Button --- */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: none;
+  color: white;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* --- Login Container --- */
+.login-container {
+  width: 1050px;
+  height: 650px;
+  border-radius: 20px;
+  display: flex;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  background-image: url("../images/loginbg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* --- Left Section --- */
+.left-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px;
+}
+
+/* --- Logo --- */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
+.logo-circle {
+  width: 60px;
+  height: 60px;
+  border: 3px solid #000;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.logo-circle .icon {
+  font-size: 28px;
+  color: #fffdfd;
+}
+
+.left-section h1 {
+  font-size: 60px;
+  color: #000;
+  font-weight: bold;
+  text-shadow: 0 0 20px rgb(255, 255, 255);
+  margin-top: 10px;
+}
+
+/* --- Subtitle --- */
+.login-message {
+  font-size: 20px;
+  color: #000;
+  margin-top: 2px;
+  font-weight: bold;
+}
+
+/* --- Input Fields with Icons --- */
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #333;
+  font-size: 18px;
+}
+
+.left-section input {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.left-section input::placeholder {
+  color: #333;
+}
+
+/* --- Forgot Password --- */
+.forgot-password {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.forgot-password a {
+  color: #000;
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+/* --- Social Media Icons (Centered Below Forgot Password) --- */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.social-icons .icon {
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-icons .icon:hover {
+  color: #6a0dad;
+}
+
+/* --- Login Button --- */
+.login-btn {
+  margin: 0 auto;
+  display: block;
+  width: 50%;
+  background-color: #201720;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(246, 240, 247, 0.815);
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #c1bdc2;
+  box-shadow: 0 0 25px rgba(155, 75, 165, 0.8);
+  color: black;
+}
+
+/* --- Right Section --- */
+.right-section {
+  flex: 1.2;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* --- Purple Overlay Section (Restored) --- */
+.right-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 65%;
+  height: 75%;
+  background-color: #0e0216d5;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 90px;
+  z-index: 2;
+}
+
+/* --- Glowing Accent --- */
+.right-section::after {
+  content: '';
+  position: absolute;
+  bottom: 60px;
+  right: 10px;
+  width: 150px;
+  height: 60px;
+  border-radius: 50%;
+  transform: rotate(-30deg) skewX(-10deg) scaleY(0.6) translateX(20px);
+  box-shadow: 0 5px 15px rgba(255, 73, 124, 0.5);
+  z-index: 3;
+  clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+}
+
+/* --- Illustration --- */
+.illustration {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  bottom: 0;
+  right: -20px;
+  z-index: 5;
+}
