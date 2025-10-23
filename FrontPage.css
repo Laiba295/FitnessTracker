@@ -1,0 +1,134 @@
+/* src/components/FrontPage.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+:root {
+    --gradient-start: #7e22ce;
+    --gradient-end: rgba(255, 105, 180, 0.8); 
+    --text-color-light: #ffffff;
+}
+
+body, #root, .App { 
+    margin: 0;
+    padding: 0;
+    width: 100vw; 
+    height: 100vh; 
+    overflow-x: hidden; 
+}
+
+.front-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    width: 100vw; 
+    background-image: url('../images/fitness.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--text-color-light); 
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+.front-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1); 
+    z-index: 1;
+}
+
+.overlay-container { 
+    background-color:rgba(37, 12, 48, 0.747); 
+    padding: 100px 130px;
+    border-radius: 15px;
+    backdrop-filter: blur(0.5px) brightness(2.1); 
+    -webkit-backdrop-filter: blur(1px) brightness(1.2);
+    border: 1px solid rgba(254, 250, 255, 0.774); 
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); 
+    max-width: 450px; 
+    z-index: 2; 
+    animation: fadeInScale 1s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: translateY(20px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); 
+}
+
+p {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.login-button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px; 
+    background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    color: var(--text-color-light);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); 
+    font-size: 20px;
+    letter-spacing: 0.8px;
+    outline: none;
+}
+
+.login-button:hover {
+    background: linear-gradient(90deg, #9b3dff 0%, rgba(255, 120, 200, 0.9) 100%); 
+    transform: translateY(-4px) scale(1.02); 
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.7); 
+}
+
+/* Modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(43, 19, 73, 0.199);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 90%; /* Responsive width */
+    max-width: 500px; /* Max width for larger screens */
+}
+
+.close-btn {
+    position: absolute;
+    top: -300px;
+    right: -200px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000; /* Color for the close button */
+}
