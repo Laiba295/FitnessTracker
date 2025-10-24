@@ -1,0 +1,39 @@
+/* src/components/Notification.css */
+.notification {
+  position: fixed;
+  bottom: 20px; /* Position it near the bottom for popup from bottom */
+  right: 20px; /* Keep it to the right, or center if preferred */
+  background-color: rgba(170, 140, 184, 0.918); /* Keep the background */
+  color: white;
+  padding: 10px 15px; /* Slightly larger padding for better readability, but still decent */
+  border-radius: 8px; /* Rounded corners for a popup feel */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Enhanced shadow for popup effect */
+  z-index: 1001; /* Ensure it appears above other content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px; /* Slightly larger for readability, but not too big */
+  max-width: 500px; /* Limit width to keep it decent and not full screen */
+  animation: slideUp 0.5s ease-out; /* Add slide-up animation */
+}
+
+.close-notification {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px; /* Slightly larger for better clickability */
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Keyframe animation for sliding up from bottom */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
